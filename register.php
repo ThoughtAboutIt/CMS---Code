@@ -7,7 +7,7 @@ if(isset($_SESSION['user'])!="")
 include_once 'dbconnect.php';
 if(isset($_POST['btn-signup']))
 {
-	$fname = mysqli_real_escape_string($conn,$_POST['fname']);
+	$fname = mysqli_real_escape_string($conn,$_POST['fnames']);
 	$lname = mysqli_real_escape_string($conn,$_POST['lname']);
 	$snumber = mysqli_real_escape_string($conn,$_POST['snumber']);
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
