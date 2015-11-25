@@ -1,5 +1,4 @@
 <?php
-include "config.php";
 $conn = mysqli_connect("sql307.byethost11.com","b11_16922317","g1zzm0123","b11_16922317_cms");
     if (!$conn)
 {
