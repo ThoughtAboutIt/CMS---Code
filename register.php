@@ -5,7 +5,6 @@ if(isset($_SESSION['user'])!="")
 	header("Location: home.php");
 }
 include_once 'dbconnect.php';
-
 if(isset($_POST['btn-signup']))
 {
 	$fname = mysqli_real_escape_string($conn,$_POST['fname']);
@@ -14,7 +13,7 @@ if(isset($_POST['btn-signup']))
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
 	$pass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
 	
-	if(mysqli_query($conn,"INSERT INTO users('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber',$uname','$email','$upass')"))
+	if(mysqli_query($conn,"INSERT INTO users('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber',$uname','$email','$pass')"))
 	{
 		?>
         <script>alert('successfully registered ');</script>
@@ -47,7 +46,7 @@ if(isset($_POST['btn-signup']))
 <td><input type="text" name="lname" placeholder="Last Name" required /></td>
 </tr>
 <tr>
-<td><input type="text" name="snumber" placeholder="Student Number" required /></td>
+<td><input type="text" name="snumber" placeholder="Student Number"/></td>
 </tr>
 <tr>
 <td><input type="email" name="email" placeholder="Your Email" required /></td>
