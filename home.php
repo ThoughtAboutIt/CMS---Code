@@ -4,7 +4,7 @@ include_once 'dbconnect.php';
 
 if(!isset($_SESSION['user']))
 {
-	header("Location: index.php");
+	header("Location: login.php");
 }
 $res=mysqli_query($conn,"SELECT username FROM users WHERE user_id=".$_SESSION['user']);
 while($row = mysqli_fetch_array($res))
