@@ -47,7 +47,7 @@ if(isset($_POST['btn-signup']))
 <td><input type="text" name="lname" placeholder="Last Name" required /></td>
 </tr>
 <tr>
-<td><input type="text" name="snumber" placeholder="First Name" required /></td>
+<td><input type="text" name="snumber" placeholder="Student Number" required /></td>
 </tr>
 <tr>
 <td><input type="email" name="email" placeholder="Your Email" required /></td>
