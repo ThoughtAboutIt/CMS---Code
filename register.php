@@ -8,11 +8,13 @@ include_once 'dbconnect.php';
 
 if(isset($_POST['btn-signup']))
 {
-	$uname = mysqli_real_escape_string($conn,$_POST['uname']);
+	$fname = mysqli_real_escape_string($conn,$_POST['fname']);
+	$lname = mysqli_real_escape_string($conn,$_POST['lname']);
+	$snumber = mysqli_real_escape_string($conn,$_POST['snumber']);
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
-	$upass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
+	$pass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
 	
-	if(mysqli_query($conn,"INSERT INTO users(username,email,password) VALUES('$uname','$email','$upass')"))
+	if(mysqli_query($conn,"INSERT INTO users('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber',$uname','$email','$upass')"))
 	{
 		?>
         <script>alert('successfully registered ');</script>
@@ -39,7 +41,13 @@ if(isset($_POST['btn-signup']))
 <form method="post">
 <table align="center" width="30%" border="0">
 <tr>
-<td><input type="text" name="uname" placeholder="User Name" required /></td>
+<td><input type="text" name="fname" placeholder="First Name" required /></td>
+</tr>
+<tr>
+<td><input type="text" name="lname" placeholder="Last Name" required /></td>
+</tr>
+<tr>
+<td><input type="text" name="snumber" placeholder="First Name" required /></td>
 </tr>
 <tr>
 <td><input type="email" name="email" placeholder="Your Email" required /></td>
