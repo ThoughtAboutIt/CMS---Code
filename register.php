@@ -15,15 +15,11 @@ if(isset($_POST['btn-signup']))
 	
 	if(mysqli_query($conn,"INSERT INTO users ('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber','$email','$upass')"))
 	{
-		?>
-        <script>alert('successfully registered ');</script>
-        <?php
+        echo "<script>alert('successfully registered ');</script>";
 	}
 	else
 	{
-		?>
-        <script>alert('error while registering you...');</script>
-        <?php
+        echo "<script>alert('error while registering you...');</script>";
 	}
 }
 ?>
