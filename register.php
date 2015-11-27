@@ -11,9 +11,9 @@ if(isset($_POST['btn-signup']))
 	$lname = mysqli_real_escape_string($conn,$_POST['lname']);
 	$snumber = mysqli_real_escape_string($conn,$_POST['snumber']);
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
-	$pass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
+	$upass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
 	
-	if(mysqli_query($conn,"INSERT INTO users('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber',$uname','$email','$pass')"))
+	if(mysqli_query($conn,"INSERT INTO users ('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber','$email','$upass')"))
 	{
 		?>
         <script>alert('successfully registered ');</script>
