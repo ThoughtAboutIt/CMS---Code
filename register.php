@@ -4,7 +4,7 @@ if(isset($_SESSION['user'])!="")
 {
 	header("Location: home.php");
 }
-include_once 'dbconnect.php';
+include_once 'includes/dbconnect.php';
 if(isset($_POST['btn-signup']))
 {
 	$fname = mysqli_real_escape_string($conn,$_POST['fname']);
@@ -13,13 +13,17 @@ if(isset($_POST['btn-signup']))
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
 	$upass = md5(mysqli_real_escape_string($conn,$_POST['pass']));
 	
-	if(mysqli_query($conn,"INSERT INTO users ('First Name','Last Name','Student Number','Email','Password') VALUES('$fname','$lname','$snumber','$email','$upass')"))
+	if(mysqli_query($conn,"INSERT INTO users (FirstName,LastName,StudentNumber,Email,Password) VALUES('$fname','$lname','$snumber','$email','$upass')"))
 	{
-        echo "<script>alert('successfully registered ');</script>";
+		?>
+        <script>alert('successfully registered ');</script>
+        <?php
 	}
 	else
 	{
-        echo "<script>alert('error while registering you...');</script>";
+		?>
+        <script>alert('error while registering you...');</script>
+        <?php
 	}
 }
 ?>
