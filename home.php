@@ -1,20 +1,14 @@
 <?php
 session_start();
-include_once 'dbconnect.php';
-
+include 'includes/dbconnect.php';
 if(!isset($_SESSION['user']))
 {
 	header("Location: login.php");
 }
-$res=mysqli_query($conn,"SELECT username FROM users WHERE user_id=".$_SESSION['user']);
+$res=mysqli_query($conn,"SELECT Email FROM users WHERE user_id=".$_SESSION['user']);
 while($row = mysqli_fetch_array($res))
 {
-    $_SESSION['username'] = $row['username'];
-}
-$resu=mysqli_query($conn,"SELECT admin FROM users WHERE user_id=".$_SESSION['user']);
-while($row = mysqli_fetch_array($resu))
-{
-    $_SESSION['admin'] = $row['admin'];
+    $_SESSION['username'] = $row['Email'];
 }
 ?>
 
