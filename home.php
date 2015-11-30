@@ -18,7 +18,7 @@ while($row = mysqli_fetch_array($res))
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome<?php echo $userRow['email']; ?></title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
 <div id="header">
