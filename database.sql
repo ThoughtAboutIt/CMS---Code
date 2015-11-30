@@ -32,9 +32,9 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `user_id` INTEGER NOT NULL AUTO_INCREMENT, 
-  `First Name` VARCHAR(25), 
-  `Last Name` VARCHAR(25), 
-  `Student Number` VARCHAR(8), 
+  `FirstName` VARCHAR(25), 
+  `LastName` VARCHAR(25), 
+  `StudentNumber` VARCHAR(8), 
   `Email` VARCHAR(30), 
   `Password` VARCHAR(20), 
   `Admin` INTEGER DEFAULT 0, 
